@@ -1,27 +1,30 @@
-import ButtonGradient from "./assets/svg/ButtonGradient";
-import Benefits from "./components/Benefits";
-import Colaboration from "./components/Colaboration";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Pricing from "./components/Pricing";
-import Roadmap from "./components/Roadmap";
-import Services from "./components/Services";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import AppLayout from "./ui/AppLayout";
+import Courses from "./pages/Courses";
+import Pricing from "./pages/Pricing";
+import Portfolio from "./pages/Portfolio";
+import Blog from "./pages/Blog";
+import GetCourse from "./pages/GetCourse";
+import Connect from "./pages/Connect";
+import PageNotFound from "./pages/PageNotFound";
 
 const App = () => {
   return (
     <>
-      <div className=" pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
-        <Header />
-        <Hero />
-        <Benefits />
-        <Colaboration />
-        <Services />
-        <Pricing />
-        <Roadmap />
-        <Footer />
-      </div>
-      <ButtonGradient />
+      <Routes>
+        <Route element={<AppLayout />}>
+          <Route index element={<Home />} />
+          <Route path="courses" element={<Courses />} />
+          <Route path="pricing" element={<Pricing />} />
+          <Route path="portfolio" element={<Portfolio />} />
+          <Route path="blog" element={<Blog />} />
+          <Route path="getCourse" element={<GetCourse />} />
+          <Route path="connect" element={<Connect />} />
+        </Route>
+
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
     </>
   );
 };
