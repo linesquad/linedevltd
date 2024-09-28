@@ -17,10 +17,7 @@ const Benefits = () => {
         <div className="flex flex-col md:flex-row flex-wrap gap-10 mb-10">
           {benefits.map((item) => (
             <div
-              className=" block relative p-[7px] bg-no-repeat bg-[length:100%_100%] max-w-[24rem]"
-              style={{
-                background: `url(${item.backgroundUrl})`,
-              }}
+              className=" block relative p-[7px] bg-no-repeat bg-[length:100%_100%] max-w-[24rem] border-color-1 border rounded-xl hover:border-transparent transition-all duration-300 ease-linear"
               key={item.id}
             >
               <div className=" relative z-2 flex flex-col min-h-[22rem] p-[2.4rem] pointer-events-none">
@@ -33,7 +30,7 @@ const Benefits = () => {
                     width={48}
                     height={48}
                   />
-                  <p className=" ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider">
+                  <p className=" ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider cursor-pointer">
                     Explore more
                   </p>
                   <Arrow />
