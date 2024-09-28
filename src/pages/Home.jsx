@@ -1,4 +1,3 @@
-import ButtonGradient from "../assets/svg/ButtonGradient";
 import Benefits from "../components/Benefits";
 import Colaboration from "../components/Colaboration";
 import Hero from "../components/Hero";
@@ -15,8 +14,6 @@ const Home = () => {
       <Services />
       <Pricing />
       <Roadmap />
-
-      <ButtonGradient />
     </>
   );
 };

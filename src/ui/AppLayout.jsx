@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Footer from "./Footer";
 import Header from "./Header";
+import ButtonGradient from "../assets/svg/ButtonGradient";
 
 const AppLayout = () => {
   return (
@@ -10,6 +11,7 @@ const AppLayout = () => {
         <Outlet />
         <Footer />
       </div>
+      <ButtonGradient />
     </>
   );
 };

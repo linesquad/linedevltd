@@ -46,33 +46,33 @@ export const navigation = [
   {
     id: "0",
     title: "Courses",
-    url: "#features",
+    url: "courses",
   },
   {
     id: "1",
     title: "Pricing",
-    url: "#pricing",
+    url: "pricing",
   },
   {
     id: "2",
     title: "Portfolio",
-    url: "#how-to-use",
+    url: "portfolio",
   },
   {
     id: "3",
     title: "Blog",
-    url: "#roadmap",
+    url: "blog",
   },
   {
     id: "4",
     title: "Get Course",
-    url: "#signup",
+    url: "getCourse",
     onlyMobile: true,
   },
   {
     id: "5",
     title: "Connect",
-    url: "#login",
+    url: "connect",
     onlyMobile: true,
   },
 ];

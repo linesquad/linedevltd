@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
 import { navigation } from "../constants";
 import Button from "../components/Button";
@@ -33,7 +33,7 @@ const Header = () => {
       }`}
     >
       <div className=" flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
-        <a href="#hero" className=" w-[12rem] xl:mr-8 flex items-center gap-2">
+        <Link to="/" className=" w-[12rem] xl:mr-8 flex items-center gap-2">
           <img
             src={lineZ}
             alt="LineDevLTD"
@@ -42,7 +42,7 @@ const Header = () => {
             className=" rounded-full"
           />
           <h1 className=" text-lg tracking-wide text-n-10">LineDevLTD</h1>
-        </a>
+        </Link>
 
         <nav
           className={` fixed top-[5rem] left-0 right-0 bottom-0 bg-n-8 lg:static lg:flex lg:mx-auto lg:bg-transparent ${
@@ -51,9 +51,9 @@ const Header = () => {
         >
           <div className=" relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row">
             {navigation.map((item) => (
-              <a
+              <NavLink
                 key={item.id}
-                href={item.url}
+                to={item.url}
                 onClick={handleClick}
                 className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${
                   item.onlyMobile ? "lg:hidden" : ""
@@ -64,20 +64,22 @@ const Header = () => {
                 } lg:leading-5  lg:hover:text-n-1 xl:px-20`}
               >
                 {item.title}
-              </a>
+              </NavLink>
             ))}
           </div>
           <HamburgerMenu />
         </nav>
-        <a
-          href="#signup"
+        <Link
+          to="getCourse"
           className=" button hidden mr-8 text-n-1/50 transition-colors hover:text-n-1 lg:block"
         >
           Get Course
-        </a>
-        <Button className="hidden lg:flex" px="px-3">
-          Connect
-        </Button>
+        </Link>
+        <Link to="connect">
+          <Button className="hidden lg:flex" px="px-3">
+            Connect
+          </Button>
+        </Link>
         <Button onClick={toggleNavigation} className="ml-auto lg:hidden">
           <MenuSvg openNavigation={opennavigation} />
         </Button>
