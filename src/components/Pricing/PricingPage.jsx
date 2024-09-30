@@ -6,7 +6,7 @@ import Section from "../Section";
 const PricingPage = () => {
   return (
     <>
-      <Section className="overflow-hidden" id="pricing">
+      <Section className="overflow-hidden" id="coursePricing">
         <div className=" container relative z-2">
           <Heading
             className=" md:max-w-md lg:max-w-2xl"
@@ -14,7 +14,7 @@ const PricingPage = () => {
           />
 
           <div className="relative">
-            <PricingList pickPrice="coursePricing" />
+            <PricingList pickPrice={true} />
             <LeftLine />
             <RightLine />
           </div>
@@ -28,7 +28,7 @@ const PricingPage = () => {
           />
 
           <div className="relative">
-            <PricingList pickPrice="pricing" />
+            <PricingList pickPrice={false} />
             <LeftLine />
             <RightLine />
           </div>

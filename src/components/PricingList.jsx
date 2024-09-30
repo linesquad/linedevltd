@@ -1,9 +1,22 @@
+import { useLocation, useNavigate } from "react-router-dom";
 import { check } from "../assets";
 import { coursePricing, pricing } from "../constants";
 import Button from "./Button";
 
 const PricingList = ({ pickPrice }) => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const currentPricing = pickPrice ? coursePricing : pricing;
+
+  const handleNavigation = (title) => {
+    const formatTitleForUrl = title.toLowerCase().replace(/\s+/g, "-");
+
+    const newPath = `/pricing/${formatTitleForUrl}`;
+    if (location.pathname !== newPath) {
+      navigate(newPath);
+    }
+  };
+
   return (
     <div
       className=" flex gap-[1rem] max-lg:flex-wrap
@@ -34,7 +47,7 @@ const PricingList = ({ pickPrice }) => {
           <Button
             className=" mb-6"
             white={!!item.price}
-            href={item.price ? "/pricing" : "mailto:ltdlinedev@gmail.com"}
+            onClick={() => handleNavigation(item.title)}
           >
             {item.price ? "Get started" : "Contact us"}
           </Button>
