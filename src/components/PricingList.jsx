@@ -7,7 +7,8 @@ const PricingList = ({ pickPrice }) => {
   return (
     <div
       className=" flex gap-[1rem] max-lg:flex-wrap
-    tiny:flex-col smaller:flex-col flex-col lg:flex-row"
+    tiny:flex-col smaller:flex-col smaller:items-center flex-col items-center md:flex-row md:flex-wrap
+     md:justify-center lg:flex-row lg:flex-nowrap"
     >
       {currentPricing.map((item) => (
         <div
