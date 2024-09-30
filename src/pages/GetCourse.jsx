@@ -1,5 +1,7 @@
+import Benefits from "../components/Benefits";
+
 const GetCourse = () => {
-  return <div>GetCourse</div>;
+  return <Benefits />;
 };
 
 export default GetCourse;

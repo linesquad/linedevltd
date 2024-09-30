@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import AppLayout from "./ui/AppLayout";
-import Courses from "./pages/Courses";
+import About from "./pages/About";
 import Pricing from "./pages/Pricing";
 import Portfolio from "./pages/Portfolio";
 import Blog from "./pages/Blog";
@@ -15,7 +15,7 @@ const App = () => {
       <Routes>
         <Route element={<AppLayout />}>
           <Route index element={<Home />} />
-          <Route path="courses" element={<Courses />} />
+          <Route path="about" element={<About />} />
           <Route path="pricing" element={<Pricing />} />
           <Route path="portfolio" element={<Portfolio />} />
           <Route path="blog" element={<Blog />} />

@@ -45,8 +45,8 @@ import card6 from "../assets/benefits/card-6.svg";
 export const navigation = [
   {
     id: "0",
-    title: "Courses",
-    url: "courses",
+    title: "About",
+    url: "about",
   },
   {
     id: "1",
@@ -253,7 +253,7 @@ export const pricing = [
 export const coursePricing = [
   {
     id: "0",
-    title: "HTML, CSS, Tailwind",
+    title: "HTML CSS Tailwind",
     description: "Starting front end",
     price: "100",
     features: [
