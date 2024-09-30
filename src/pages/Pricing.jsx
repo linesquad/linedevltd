@@ -1,5 +1,7 @@
+import PricingPage from "../components/Pricing/PricingPage";
+
 const Pricing = () => {
-  return <div>Pricing</div>;
+  return <PricingPage />;
 };
 
 export default Pricing;
