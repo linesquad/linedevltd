@@ -5,7 +5,10 @@ import Button from "./Button";
 const PricingList = ({ pickPrice }) => {
   const currentPricing = pickPrice ? coursePricing : pricing;
   return (
-    <div className=" flex gap-[1rem] max-lg:flex-wrap">
+    <div
+      className=" flex gap-[1rem] max-lg:flex-wrap
+    tiny:flex-col smaller:flex-col flex-col lg:flex-row"
+    >
       {currentPricing.map((item) => (
         <div
           key={item.id}
