@@ -1,5 +1,7 @@
+import Benefits from "../components/Benefits";
+
 const Courses = () => {
-  return <div>Courses</div>;
+  return <Benefits />;
 };
 
 export default Courses;
