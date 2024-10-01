@@ -34,18 +34,19 @@ const Benefits = () => {
               className=" block relative p-[7px] bg-no-repeat bg-[length:100%_100%] max-w-[24rem] border-color-1 border rounded-xl hover:border-transparent transition-all duration-300 ease-linear"
               key={item.id}
             >
-              <div className=" relative z-2 flex flex-col min-h-[22rem] p-[2.4rem]">
+              <div className=" relative z-2 flex flex-col min-h-[22rem] p-[2.4rem] pointer-events-none">
                 <h5 className="h5 mb-5">{item.title}</h5>
                 <p className=" body-2 mb-6 text-n-3">{item.text}</p>
-                <div className=" flex items-center mt-auto pointer-events-auto">
+                <div className=" flex items-center mt-auto ">
                   <img
                     src={item.iconUrl}
                     alt={item.title}
                     width={48}
                     height={48}
                   />
+                  {/* pointer-events-auto stop hover effect */}
                   <div
-                    className=" ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider cursor-pointer flex"
+                    className=" ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider cursor-pointer flex pointer-events-auto"
                     onClick={() => handleExploreMore(item.title)}
                   >
                     <button>Explore more</button>
