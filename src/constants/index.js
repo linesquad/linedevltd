@@ -297,6 +297,113 @@ export const benefits = [
     backgroundUrl: card1,
     iconUrl: benefitIcon1,
     imageUrl: roadmap1,
+    syllabus: {
+      html: {
+        week1: {
+          lecture1: {
+            title:
+              "LECTURE 1 : Getting to know each other. Discussion of programming in general",
+            description: [
+              "What is the difference between frontend and backend (very generally)",
+              "What do html, css, javascript do (very generally)",
+              "VS code (installation, setting up the environment)",
+            ],
+          },
+          lecture2: {
+            title: "LECTURE 2 : Introduction and basic structure of HTML",
+            description: [
+              "What is HTML and its role in web development",
+              "How to create our first html file",
+              "Create headings (h1-h6), paragraphs (p) and line-breaks (br)",
+            ],
+          },
+          lecture3: {
+            title: "LECTURE 3 : Formatting text, images, lists and links.",
+            description: [
+              "Text formatting: bold (<b>), italic (<i>), and underline (<u>)",
+              "Create links (<a>)",
+              "Adding titles to links",
+              "Unordered lists (<ul>) and ordered lists (<ol>)",
+              "Adding images with the <img> tag",
+              "Understanding image attributes (src, alt, width, height)",
+            ],
+          },
+        },
+
+        week2: {
+          lecture4: {
+            title:
+              "LECTURE 4 : Web page structure, and bonus mini lecutre of Git & GitHub ",
+            description: [
+              "Send assignments with Git&GitHub",
+              "Difference between block and inline element",
+              "Semantic HTML tags: <header>, <footer>, <nav>, <section>, <article>",
+              "Practice: Build a basic web page structure",
+            ],
+          },
+          lecture5: {
+            title: "LECTURE 5 : Introduction to Forms",
+            description: [
+              "Basic form elements: input fields, buttons, label",
+              "Form attributes: action, method, and form submission",
+              "Text input, password fields, and buttons",
+              "Practice: Create a simple form",
+            ],
+          },
+          lecture6: {
+            title: "LECTURE 6 : Advanced form ellements",
+            description: [
+              "Checkboxes, radio buttons and drop downs, select",
+              "Create Submit and Reset buttons",
+              "Introduction to Form Validations: Required Fields and Error Handling",
+            ],
+          },
+        },
+
+        week3: {
+          lecture7: {
+            title: "LECTURE 7 : MultiMedia and Tables",
+            description: [
+              "<audio>, <video>, <iframe>",
+              "Create the main table: <table>, <tr>, <td>, <th>",
+              "Add header and footer",
+              "Style with attributes (border, colspan, rowspan)",
+            ],
+          },
+          lecture8: {
+            title: "LECTURE 8 : Summary",
+            description: [
+              "Let's make a perfect HTML website using everything we've learned",
+              "Practice: give a similar intermediate project",
+            ],
+          },
+          lecture9: {
+            title: "LECTURE 9 : Review of projects",
+            description: ["Review and feedback of projects"],
+          },
+        },
+      },
+      css: {
+        week3: {
+          lecture1: {
+            title: "გაცნობა(ერთმანეთის). პროგრამირების განხილვა ზოგადად",
+            description: [
+              "რა განსხვავებაა ფრონტენდსა და ბექენდს შორის (ძალიან ზოგადად),",
+              "რას აკეთებს html, css, javascript (ძალიან ზოგადად)",
+              "vs code (ინსტალაცია, გარემოს მოწესრიგება)",
+            ],
+          },
+          lecture2: {
+            title: "გაცნობა(ერთმანეთის). პროგრამირების განხილვა ზოგადად",
+            description: [
+              "რა განსხვავებაა ფრონტენდსა და ბექენდს შორის (ძალიან ზოგადად),",
+              "რას აკეთებს html, css, javascript (ძალიან ზოგადად)",
+              "vs code (ინსტალაცია, გარემოს მოწესრიგება)",
+            ],
+          },
+        },
+      },
+    },
   },
   {
     id: "1",
