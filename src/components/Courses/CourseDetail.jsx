@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import Section from "../Section";
 import { benefits } from "../../constants";
+import { motion, AnimatePresence } from "framer-motion";
 
 const CourseDetail = () => {
   const { courseTitle } = useParams();
@@ -42,62 +43,102 @@ const CourseDetail = () => {
 
   return (
     <Section id="courseDetail">
-      <div className="container relative z-2">
-        <h1 className="text-2xl font-bold pb-6">{course.title}</h1>
-        <p>{course.text}</p>
+      <div className="container relative z-2 flex flex-col w-full items-center">
+        <h1 className="tiny:text-base smaller:text-lg text-3xl font-bold pb-6 text-center">
+          {course.title}
+        </h1>
+        <p className="max-w-[600px] text-center pb-10 tiny:text-sm smaller:text-base text-lg sm:text-xl">
+          {course.text}
+        </p>
 
         {syllabus ? (
-          <div>
-            <h2 className="">Syllabus:</h2>
-            {Object.keys(syllabus).map((subject) => (
-              <div key={subject} className="mb-4">
+          <div className="flex flex-col w-full max-w-[800px]">
+            <h2 className="text-2xl sm:text-3xl font-semibold pb-8 text-center">
+              Syllabus:
+            </h2>
+            <div className="flex flex-col space-y-6">
+              {Object.keys(syllabus).map((subject) => (
                 <div
-                  onClick={() => toggleSubject(subject)}
-                  className="cursor-pointer font-bold"
+                  key={subject}
+                  className="bg-gray-100 p-4 rounded-lg shadow-md"
                 >
-                  {subject.toUpperCase()}
-                </div>
-
-                {openSubject === subject && (
-                  <div className="ml-4">
-                    {Object.keys(syllabus[subject]).map((week) => (
-                      <div key={week}>
-                        <div
-                          onClick={() => toggleWeek(week)}
-                          className="cursor-pointer text-lg"
-                        >
-                          {week}
-                        </div>
-
-                        {openWeek === week && (
-                          <div className="ml-6">
-                            {Object.keys(syllabus[subject][week]).map(
-                              (lecture) => (
-                                <div key={lecture} className="mb-2">
-                                  <p className="font-semibold">
-                                    {syllabus[subject][week][lecture].title}
-                                  </p>
-                                  <ul className="list-disc ml-4">
-                                    {syllabus[subject][week][
-                                      lecture
-                                    ].description.map((item, index) => (
-                                      <li key={index}>{item}</li>
-                                    ))}
-                                  </ul>
-                                </div>
-                              )
-                            )}
-                          </div>
-                        )}
-                      </div>
-                    ))}
+                  <div
+                    onClick={() => toggleSubject(subject)}
+                    className={`cursor-pointer text-xl font-bold text-center transition duration-300 ${
+                      openSubject === subject
+                        ? "text-indigo-600"
+                        : "text-gray-800"
+                    } hover:text-indigo-600`}
+                  >
+                    {subject.toUpperCase()}
                   </div>
-                )}
-              </div>
-            ))}
+
+                  <AnimatePresence>
+                    {openSubject === subject && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="mt-4 space-y-4"
+                      >
+                        {Object.keys(syllabus[subject]).map((week) => (
+                          <div key={week} className="text-center">
+                            <div
+                              onClick={() => toggleWeek(week)}
+                              className={`cursor-pointer text-lg font-semibold transition duration-300  ${
+                                openWeek === week
+                                  ? "text-indigo-500"
+                                  : "text-gray-700"
+                              } hover:text-indigo-500`}
+                            >
+                              {week}
+                            </div>
+
+                            <AnimatePresence>
+                              {openWeek === week && (
+                                <motion.div
+                                  initial={{ height: 0, opacity: 0 }}
+                                  animate={{ height: "auto", opacity: 1 }}
+                                  exit={{ height: 0, opacity: 0 }}
+                                  transition={{ duration: 0.3 }}
+                                  className="mt-3 ml-4 p-4 rounded-lg bg-white shadow-sm border border-gray-200"
+                                >
+                                  {Object.keys(syllabus[subject][week]).map(
+                                    (lecture) => (
+                                      <div key={lecture} className="mb-4">
+                                        <p className="font-semibold text-gray-900">
+                                          {
+                                            syllabus[subject][week][lecture]
+                                              .title
+                                          }
+                                        </p>
+                                        <ul className="list-disc ml-5 text-gray-600">
+                                          {syllabus[subject][week][
+                                            lecture
+                                          ].description.map((item, index) => (
+                                            <li key={index}>{item}</li>
+                                          ))}
+                                        </ul>
+                                      </div>
+                                    )
+                                  )}
+                                </motion.div>
+                              )}
+                            </AnimatePresence>
+                          </div>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ))}
+            </div>
           </div>
         ) : (
-          <div className="">Syllabus not available for this course.</div>
+          <div className="text-center">
+            Syllabus not available for this course.
+          </div>
         )}
       </div>
     </Section>
