@@ -531,6 +531,97 @@ export const benefits = [
           },
         },
       },
+      tailwind: {
+        week9: {
+          lecture25: {
+            title: "LECTURE 25 : Tailwind - begining",
+            description: [
+              "What is Tailwind",
+              "Install Tailwind CSS",
+              "Let's display CSS styles using Tailwind",
+              "Jujuna a project to do.",
+              "Overwriting the intermediate through Tailwind",
+            ],
+          },
+          lecture26: {
+            title: "LECTURE 26 : configuration",
+            description: ["Set the colors", "Dark Mode"],
+          },
+          lecture27: {
+            title: "LECTURE 27 : Live Coding",
+            description: ["The lecturer creates a component"],
+          },
+        },
+        week10: {
+          lecture28: {
+            title: "LECTURE 28 : Live Coding",
+            description: [
+              "The lecturer creates a component",
+              "give task for home",
+            ],
+          },
+          lecture29: {
+            title: "LECTURE 29 : Live Coding",
+            description: [
+              "The lecturer creates a component",
+              "give task for home",
+            ],
+          },
+          lecture30: {
+            title: "LECTURE 30 : Live Coding",
+            description: [
+              "The lecturer creates a component",
+              "give task for home",
+            ],
+          },
+        },
+        week11: {
+          lecture31: {
+            title: "LECTURE 31 : Live Coding",
+            description: [
+              "The lecturer creates a component",
+              "give task for home",
+            ],
+          },
+          lecture32: {
+            title: "LECTURE 32 : Live Coding",
+            description: [
+              "The lecturer creates a component",
+              "give task for home",
+            ],
+          },
+          lecture33: {
+            title: "LECTURE 33 : Live Coding",
+            description: [
+              "The lecturer creates a component",
+              "give task for home",
+            ],
+          },
+        },
+        week12: {
+          lecture34: {
+            title: "LECTURE 34 : Live Coding",
+            description: [
+              "The lecturer creates a component",
+              "give task for home",
+            ],
+          },
+          lecture35: {
+            title: "LECTURE 35 : Live Coding",
+            description: [
+              "The lecturer creates a component",
+              "give task for home",
+            ],
+          },
+          lecture36: {
+            title: "LECTURE 36 : Live Coding",
+            description: [
+              "The lecturer creates a component",
+              "give task for home",
+            ],
+          },
+        },
+      },
     },
   },
   {
