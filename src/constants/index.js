@@ -384,22 +384,150 @@ export const benefits = [
         },
       },
       css: {
-        week3: {
-          lecture1: {
-            title: "გაცნობა(ერთმანეთის). პროგრამირების განხილვა ზოგადად",
+        week4: {
+          lecture10: {
+            title: "LECTURE 10 : css - beginning",
             description: [
-              "რა განსხვავებაა ფრონტენდსა და ბექენდს შორის (ძალიან ზოგადად),",
-              "რას აკეთებს html, css, javascript (ძალიან ზოგადად)",
-              "vs code (ინსტალაცია, გარემოს მოწესრიგება)",
+              "inline, internal, external",
+              "background-color, color",
+              "class, id",
+              "font-family",
+              "border",
+              "backgroud-image",
+              "size px, %, rem, em",
             ],
           },
-          lecture2: {
-            title: "გაცნობა(ერთმანეთის). პროგრამირების განხილვა ზოგადად",
+          lecture11: {
+            title: "LECTURE 11 : size",
             description: [
-              "რა განსხვავებაა ფრონტენდსა და ბექენდს შორის (ძალიან ზოგადად),",
-              "რას აკეთებს html, css, javascript (ძალიან ზოგადად)",
-              "vs code (ინსტალაცია, გარემოს მოწესრიგება)",
+              "margin, padding",
+              "float, clear",
+              "text-align",
+              "display",
             ],
+          },
+          lecture12: {
+            title: "LECTURE 12 : link & nth-child",
+            description: [
+              "a:link a:visited a:hover a:active",
+              "nth-child",
+              "text-shadow, box-shadow",
+              "icons",
+            ],
+          },
+        },
+        week5: {
+          lecture13: {
+            title: "LECTURE 13 : flex",
+            description: [
+              "flex-direction",
+              "flex-wrap",
+              "flex-flow",
+              "justify-content",
+              "align-items",
+            ],
+          },
+          lecture14: {
+            title: "LECTURE 14 : flex",
+            description: [
+              "align-content",
+              "gap, row-gap, column-gap",
+              "order",
+              "flex-grow",
+              "flex-shrink",
+              "flex-basis",
+              "align-self",
+            ],
+          },
+          lecture15: {
+            title: "LECTURE 12 : grid",
+            description: [
+              "grid-template-columns",
+              "grid-template-rows",
+              "grid-template-areas",
+              "grid-template",
+              "column-gap",
+              "row-gap",
+              "grid-column-gap",
+              "grid-row-gap",
+              "justify-items",
+              "align-items",
+              "place-items",
+            ],
+          },
+        },
+        week6: {
+          lecture16: {
+            title: "LECTURE 16 : grid",
+            description: [
+              "justify-content",
+              "align-content",
+              "place-content",
+              "grid-auto-columns",
+              "grid-auto-rows",
+              "grid-column-start",
+              "grid-column-end",
+              "grid-row-start",
+              "grid-row-end",
+              "align-self",
+              "place-self",
+            ],
+          },
+          lecture17: {
+            title: "LECTURE 17 : position",
+            description: ["static", "relative", "fixed", "absolute", "sticky"],
+          },
+          lecture18: {
+            title: "LECTURE 18 : position",
+            description: ["static", "relative", "fixed", "absolute", "sticky"],
+          },
+        },
+        week7: {
+          lecture19: {
+            title: "LECTURE 19 : variable & responsive",
+            description: ["create css variable", "Media Queries"],
+          },
+          lecture20: {
+            title: "LECTURE 20 : transform, animate",
+            description: [
+              "animation-delay",
+              "animation-direction",
+              "animation-duration",
+              "animation-fill-mode",
+              "animation-iteration-count",
+              "animation-name",
+              "animation-play-state",
+              "animation-timeline",
+              "animation-timing-function",
+            ],
+          },
+          lecture21: {
+            title: "LECTURE 21 : transform, animate",
+            description: [
+              "animation-delay",
+              "animation-direction",
+              "animation-duration",
+              "animation-fill-mode",
+              "animation-iteration-count",
+              "animation-name",
+              "animation-play-state",
+              "animation-timeline",
+              "animation-timing-function",
+            ],
+          },
+        },
+        week8: {
+          lecture22: {
+            title: "LECTURE 22 : Project Week",
+            description: ["project fresh lime"],
+          },
+          lecture23: {
+            title: "LECTURE 23 : Project Week",
+            description: ["project fresh lime"],
+          },
+          lecture24: {
+            title: "LECTURE 24 : Project Week",
+            description: ["project fresh lime"],
           },
         },
       },
