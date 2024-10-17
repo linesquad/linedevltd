@@ -4,23 +4,23 @@
 	 viewBox="0 0 28 28" style="enable-background:new 0 0 28 28;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:url(#SVGID_1_);}
-	.st1{fill:#E9CA32;}
-	.st2{fill:#FFDE25;}
+	.st1{fill:#A38B00;}
+	.st2{fill:#BCAE00;}
 	.st3{fill:#FFFFFF;}
-	.st4{fill:url(#SVGID_00000176736399546613757480000010611861585171930258_);}
+	.st4{fill:url(#SVGID_00000021823463445206337180000018063330750062809782_);}
 	.st5{fill:#00BFF2;}
-	.st6{fill:url(#SVGID_00000069395626977227948440000015814715899098499220_);}
-	.st7{fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_00000069355700186623404330000000506057059702848160_);}
+	.st6{fill:url(#SVGID_00000181083294712897616230000015902595497327846533_);}
+	.st7{fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_00000183938026999841174990000006124811660232542108_);}
 	.st8{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
-	.st9{fill:url(#SVGID_00000161593641050956644710000001913018385604654765_);}
-	.st10{fill:#50AA46;}
-	.st11{fill:url(#SVGID_00000145054607396544934360000014939053012750711962_);}
-	.st12{fill:#15B8C5;}
+	.st9{fill:url(#SVGID_00000002375668767098805760000003482784047061759420_);}
+	.st10{fill:#323330;}
+	.st11{fill:url(#SVGID_00000172442224031463278130000010975514402505732753_);}
+	.st12{fill:#A5F3FC;}
 </style>
 <g>
 	<g>
 		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="4.1005" y1="23.8995" x2="23.8995" y2="4.1005">
-			<stop  offset="0" style="stop-color:#93278F"/>
+			<stop  offset="0" style="stop-color:#FF7FCD"/>
 			<stop  offset="1" style="stop-color:#000000"/>
 		</linearGradient>
 		<circle class="st0" cx="14" cy="14" r="14"/>
