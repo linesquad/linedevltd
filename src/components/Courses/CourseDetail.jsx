@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import Section from "../Section";
 import { benefits } from "../../constants";
 import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "../ui/MovingBorders";
 
 const CourseDetail = () => {
   const { courseTitle } = useParams();
@@ -133,6 +134,15 @@ const CourseDetail = () => {
                   </AnimatePresence>
                 </div>
               ))}
+            </div>
+            <div className="w-full flex items-center justify-center my-[20px]">
+              <Button
+                duration={3000}
+                containerClassName="relative w-48 h-16"
+                borderClassName="bg-blue-500"
+              >
+                Registration
+              </Button>
             </div>
           </div>
         ) : (
