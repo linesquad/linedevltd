@@ -4,6 +4,7 @@ import Button from "./Button";
 import Section from "./Section";
 import lineZ from "../assets/lineZ.png";
 import { LeftCurve, RightCurve } from "./design/Collaboration";
+import { Link } from "react-router-dom";
 
 const Colaboration = () => {
   return (
@@ -28,7 +29,9 @@ const Colaboration = () => {
             ))}
           </ul>
 
-          <Button>Connect</Button>
+          <Button>
+            <Link to={"connect"}> Connect</Link>
+          </Button>
         </div>
 
         <div className=" lg:ml-auto xl:w-[38rem] mt-4">

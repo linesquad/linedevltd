@@ -9,6 +9,7 @@ import Generating from "./Generating";
 import Notification from "./Notification";
 import CompanyLogos from "./CompanyLogos";
 import nicolasline from "../assets/nicolasline.png";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const parallaxRef = useRef(null);
@@ -39,7 +40,9 @@ const Hero = () => {
             Get the course with your level and join team and develop your self
             as experienced developer, build special from nothing nad enjoy
           </p>
-          <Button white>Connect</Button>
+          <Button white>
+            <Link to={"connect"}>Connect</Link>{" "}
+          </Button>
         </div>
         <div className=" relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24">
           <div className=" relative z-1 p-0.5 rounded-2xl bg-conic-gradient">

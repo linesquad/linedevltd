@@ -31,7 +31,7 @@ export default function ContactForm() {
   };
   const selectedCategory = watch("category");
   return (
-    <div className="w-full z-[100] py-[90px] flex items-center justify-center">
+    <div className="w-full z-[100] py-[80px] flex items-center justify-center">
       <MovingStars_Sphere />
       <ToastContainer />
       <form
