@@ -2,29 +2,44 @@ import { useForm } from "react-hook-form";
 import Button from "../Button";
 import MovingStars_Sphere from "./MovingStars_Sphere";
 import useSentEmail from "../../customHooks/useSendEmail";
-
+import { pricing } from "../../constants";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 export default function ContactForm() {
   const {
     register,
     handleSubmit,
     formState: { errors },
     setValue,
+    watch,
+    reset,
   } = useForm();
   const { sendEmail } = useSentEmail();
-  const onSubmit = (data) => sendEmail(data);
+  const onSubmit = async (data) => {
+    try {
+      await sendEmail(data);
+      toast.success("Email sent successfully!");
+      reset();
+    } catch (error) {
+      console.log(error.message);
+      toast.error("Failed to send email. Please try again.");
+    }
+  };
 
   const handleTrim = (field) => (e) => {
     setValue(field, e.target.value.trim(), { shouldValidate: true });
   };
+  const selectedCategory = watch("category");
   return (
-    <div className="w-full z-[1000]  py-[100px] flex items-center justify-center">
+    <div className="w-full z-[100] py-[90px] flex items-center justify-center">
       <MovingStars_Sphere />
+      <ToastContainer />
       <form
-        className="flex absolute flex-col md:gap-[10px] gap-[5px] rounded-[8px] w-[60%]"
+        className="flex absolute flex-col gap-[10px]  rounded-[8px] md:w-[60%] w-[90%]"
         onSubmit={handleSubmit(onSubmit)}
       >
         <input
-          className={`px-[20px] md:text-[16px] text-[14px]  transition-all duration-[1s] ease-in-out py-[15px] bg-transparent border rounded-[8px] ${
+          className={`px-[20px] md:text-[16px] text-[14px] transition-all duration-[1s] ease-in-out py-[15px] bg-transparent border rounded-[8px] ${
             errors.name ? "border-red-500" : "border-[rgb(172 106 255)]"
           }`}
           placeholder="Name or Company"
@@ -45,7 +60,7 @@ export default function ContactForm() {
           {...register("gmail", {
             required: "Email is required",
             pattern: {
-              value: /^[a-zA-Z0-9._%+-]+@gmail\.com$/,
+              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
               message: "Please enter a valid Gmail address",
             },
           })}
@@ -75,6 +90,44 @@ export default function ContactForm() {
           )}
         </div>
 
+        <div className="flex flex-col items-center justify-center">
+          <div className="flex  items-center justify-center md:gap-[40px] gap-[20px]">
+            {pricing.map((item, index) => (
+              <div
+                key={index}
+                className={`border cursor-pointer rounded-[8px] p-[10px] mb-[10px] transition-all duration-300 ease-in-out ${
+                  selectedCategory === item.title
+                    ? "border-[green]"
+                    : errors.category
+                    ? "border-red-500"
+                    : "border-[rgb(172 106 255)]"
+                }`}
+              >
+                <label
+                  className="cursor-pointer md:text-[16px] text-[12px]"
+                  htmlFor={`${item.title}-${index}`}
+                >
+                  {item.title}
+                </label>
+                <input
+                  className="hidden"
+                  type="radio"
+                  id={`${item.title}-${index}`}
+                  name="category"
+                  value={item.title}
+                  {...register("category", {
+                    required: "Choose one of them",
+                  })}
+                />
+              </div>
+            ))}
+          </div>
+          <div className="h-[10px] mb-[10px]">
+            {errors.category && (
+              <span className="text-red-500">{errors.category.message}</span>
+            )}
+          </div>
+        </div>
         <textarea
           rows={3}
           className={`px-[20px] md:text-[16px] text-[14px] transition-all duration-[1s] ease-in-out py-[15px] bg-transparent border rounded-[8px] ${

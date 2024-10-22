@@ -10,12 +10,12 @@ export default function useSentEmail() {
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
     const templateParams = {
-      from_name: emailData.fullName,
-      from_email: emailData.email,
+      from_name: emailData.name,
+      from_email: emailData.gmail,
       to_name: "Mariam",
       message: emailData.message,
-
-      number: emailData.phoneNumber,
+      category: emailData.category,
+      number: emailData.number,
     };
     console.log(templateParams);
     setLoader(true);

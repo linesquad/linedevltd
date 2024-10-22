@@ -1,10 +1,13 @@
 import ContactForm from "../components/contactPage/ContactForm";
+import Section from "../components/Section";
 
 const Connect = () => {
   return (
-    <div className="relative w-[100%] ">
-      <ContactForm />
-    </div>
+    <Section id="features">
+      <div className=" container relative ">
+        <ContactForm />
+      </div>
+    </Section>
   );
 };
 
