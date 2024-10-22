@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import Button from "../Button";
 import MovingStars_Sphere from "./MovingStars_Sphere";
+import useSentEmail from "../../customHooks/useSendEmail";
 
 export default function ContactForm() {
   const {
@@ -9,8 +10,9 @@ export default function ContactForm() {
     formState: { errors },
     setValue,
   } = useForm();
+  const { sendEmail } = useSentEmail();
+  const onSubmit = (data) => sendEmail(data);
 
-  const onSubmit = (data) => console.log(data);
   const handleTrim = (field) => (e) => {
     setValue(field, e.target.value.trim(), { shouldValidate: true });
   };
