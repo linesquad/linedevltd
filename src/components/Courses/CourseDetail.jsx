@@ -4,12 +4,14 @@ import Section from "../Section";
 import { benefits } from "../../constants";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "../ui/MovingBorders";
+import RegistrationModal from "./RegistrationModal";
+import { ToastContainer } from "react-toastify";
 
 const CourseDetail = () => {
   const { courseTitle } = useParams();
   const [openSubject, setOpenSubject] = useState(null);
   const [openWeek, setOpenWeek] = useState(null);
-
+  const [showRegistrationModal, setShowRegistrationModal] = useState(false);
   const formatTitle = (title) => {
     return title
       .toLowerCase()
@@ -32,7 +34,7 @@ const CourseDetail = () => {
   }
 
   const { syllabus } = course;
-
+  console.log(course.title, "course");
   const toggleSubject = (subject) => {
     setOpenSubject(openSubject === subject ? null : subject);
     setOpenWeek(null);
@@ -44,6 +46,7 @@ const CourseDetail = () => {
 
   return (
     <Section id="courseDetail">
+      <ToastContainer />
       <div className="container relative z-2 flex flex-col w-full items-center">
         <h1 className="tiny:text-base smaller:text-lg text-3xl font-bold pb-6 text-center">
           {course.title}
@@ -135,14 +138,24 @@ const CourseDetail = () => {
                 </div>
               ))}
             </div>
-            <div className="w-full flex items-center justify-center my-[20px]">
+            <div
+              onClick={() => setShowRegistrationModal(true)}
+              className="w-full flex items-center justify-center my-[20px]"
+            >
               <Button
                 duration={3000}
-                containerClassName="relative w-48 h-16"
+                containerClassName="relative w-48 h-14"
                 borderClassName="bg-blue-500"
               >
                 Registration
               </Button>
+              {showRegistrationModal && (
+                <RegistrationModal
+                  course={course.title}
+                  onclose={() => setShowRegistrationModal(false)}
+                  showRegistrationModal={showRegistrationModal}
+                />
+              )}
             </div>
           </div>
         ) : (

@@ -16,8 +16,9 @@ export default function useSentEmail() {
       message: emailData.message,
       category: emailData.category,
       number: emailData.number,
+      course: emailData.course,
     };
-    console.log(templateParams);
+
     setLoader(true);
     emailjs
       .send(serviceId, templateId, templateParams, publicKey)
