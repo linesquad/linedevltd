@@ -138,22 +138,19 @@ const CourseDetail = () => {
                 </div>
               ))}
             </div>
-            <div
-              onClick={() => setShowRegistrationModal(true)}
-              className="w-full flex items-center justify-center my-[20px]"
-            >
+            <div className="w-full flex items-center justify-center my-[20px]">
               <Button
                 duration={3000}
                 containerClassName="relative w-48 h-14"
                 borderClassName="bg-blue-500"
+                onClick={() => setShowRegistrationModal(true)}
               >
                 Registration
               </Button>
               {showRegistrationModal && (
                 <RegistrationModal
                   course={course.title}
-                  onclose={() => setShowRegistrationModal(false)}
-                  showRegistrationModal={showRegistrationModal}
+                  setShowRegistrationModal={setShowRegistrationModal}
                 />
               )}
             </div>

@@ -16,6 +16,7 @@ export function Button({
   borderClassName,
   duration,
   className,
+  onClick,
   ...otherProps
 }) {
   return (
@@ -28,6 +29,7 @@ export function Button({
         borderRadius: borderRadius,
       }}
       {...otherProps}
+      onClick={onClick}
     >
       <div
         className="absolute inset-0"
