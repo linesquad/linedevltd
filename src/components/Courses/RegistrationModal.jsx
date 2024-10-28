@@ -5,7 +5,7 @@ import useSentEmail from "../../customHooks/useSendEmail";
 
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { motion } from "framer-motion";
 
 export default function RegistrationModal({
@@ -78,14 +78,6 @@ export default function RegistrationModal({
       },
     },
   };
-
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, []);
 
   return (
     <motion.div
