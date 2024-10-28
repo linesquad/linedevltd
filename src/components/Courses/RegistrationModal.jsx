@@ -41,11 +41,12 @@ export default function RegistrationModal({
   };
   const modalRef = useRef(null);
   const butref = useRef(null);
+
   const overlayVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { duration: 0.5, ease: "easeInOut" },
+      transition: { duration: 0.3, ease: "easeInOut" },
     },
     exit: {
       opacity: 0,
@@ -54,26 +55,18 @@ export default function RegistrationModal({
   };
 
   const modalVariants = {
-    hidden: { opacity: 0, y: 100, scale: 0.7 },
+    hidden: { opacity: 1, scale: 0 },
     visible: {
-      opacity: 1,
-      y: 0,
       scale: 1,
       transition: {
-        type: "spring",
-        stiffness: 300,
-        damping: 25,
-        mass: 0.8,
-        duration: 0.6,
-        ease: "anticipate",
+        duration: 0.3,
+        ease: "easeInOut",
       },
     },
     exit: {
-      opacity: 0,
-      y: 100,
-      scale: 0.7,
+      scale: 0,
       transition: {
-        duration: 0.4,
+        duration: 0.3,
         ease: "easeInOut",
       },
     },

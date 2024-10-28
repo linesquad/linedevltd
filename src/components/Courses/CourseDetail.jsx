@@ -147,12 +147,14 @@ const CourseDetail = () => {
               >
                 Registration
               </Button>
-              {showRegistrationModal && (
-                <RegistrationModal
-                  course={course.title}
-                  setShowRegistrationModal={setShowRegistrationModal}
-                />
-              )}
+              <AnimatePresence>
+                {showRegistrationModal && (
+                  <RegistrationModal
+                    course={course.title}
+                    setShowRegistrationModal={setShowRegistrationModal}
+                  />
+                )}
+              </AnimatePresence>
             </div>
           </div>
         ) : (
