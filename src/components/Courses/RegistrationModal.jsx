@@ -50,7 +50,7 @@ export default function RegistrationModal({
 
   return (
     <motion.div
-      className="fixed top-[80px] right-0 bottom-0 left-0 flex justify-center items-center bg-[#000]/50"
+      className="fixed top-[80px] right-0 bottom-0 left-0 flex justify-center items-center bg-[#000]/80"
       onClick={() => setShowRegistrationModal(false)}
       variants={overlayVariants}
       initial="hidden"
@@ -58,7 +58,7 @@ export default function RegistrationModal({
       exit="exit"
     >
       <motion.div
-        className="absolute z-30 bg-[#040414] border rounded-[8px] pt-[50px] pb-[20px] flex items-center justify-center w-full max-w-[800px]"
+        className="absolute z-30 bg-[#040414] border rounded-[8px] pt-[50px] pb-[20px] flex items-center justify-center w-full max-w-[700px]"
         onClick={(e) => e.stopPropagation()}
         variants={modalVariants}
         initial="hidden"
