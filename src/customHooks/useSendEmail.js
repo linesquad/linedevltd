@@ -4,7 +4,7 @@ import emailjs from "@emailjs/browser";
 export default function useSentEmail() {
   const [loader, setLoader] = useState(false);
 
-  const sendEmail = (emailData) => {
+  const sendEmail = async (emailData) => {
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
@@ -12,7 +12,7 @@ export default function useSentEmail() {
     const templateParams = {
       from_name: emailData.name,
       from_email: emailData.gmail,
-      to_name: "Mariam",
+      to_name: "Line",
       message: emailData.message,
       category: emailData.category,
       number: emailData.number,
@@ -20,25 +20,27 @@ export default function useSentEmail() {
     };
 
     setLoader(true);
-    emailjs
-      .send(serviceId, templateId, templateParams, publicKey)
 
-      .then((response) => {
-        console.log("Email sent successfully", response);
-      })
-      .catch((error) => {
-        console.error("Error sending email", error);
-      })
-      .finally(() => {
-        setLoader(false);
-      });
+    try {
+      emailjs.init(publicKey);
 
-    return true;
+      const response = await emailjs.send(
+        serviceId,
+        templateId,
+        templateParams
+      );
+      console.log("Email sent successfully", response);
+      return response;
+    } catch (error) {
+      console.error("Error sending email", error);
+      throw new Error("Email sending failed");
+    } finally {
+      setLoader(false);
+    }
   };
 
   return {
     sendEmail,
-
     loader,
   };
 }
