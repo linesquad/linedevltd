@@ -32,6 +32,7 @@ const customStyles = {
     },
     backgroundColor: "#2c2c2c",
     color: "#f9fafb",
+    cursor: "pointer",
   }),
   singleValue: (provided) => ({
     ...provided,
@@ -40,6 +41,7 @@ const customStyles = {
   placeholder: (provided) => ({
     ...provided,
     color: "#9ca3af",
+    cursor: "pointer",
   }),
   option: (provided, state) => ({
     ...provided,
@@ -49,6 +51,7 @@ const customStyles = {
     "&:hover": {
       backgroundColor: "#3b82f6",
     },
+    cursor: "pointer",
   }),
   dropdownIndicator: (provided) => ({
     ...provided,
