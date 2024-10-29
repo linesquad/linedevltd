@@ -35,6 +35,10 @@ const AllBlog = () => {
     navigate(`?${updatedParams.toString()}`, { replace: true });
   }, [page, sortOrder, category, navigate]);
 
+  useEffect(() => {
+    setPage(1);
+  }, [sortOrder, category]);
+
   if (isLoading) {
     return (
       <div className="flex justify-center">
