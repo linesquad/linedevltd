@@ -1,10 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import { blogWithPagination } from "../services/apiBlog";
 
-const useBlogWithPagination = (page, sortOrder) => {
+const useBlogWithPagination = (page, sortOrder, category) => {
   const { data, isLoading, error, isError } = useQuery({
-    queryFn: () => blogWithPagination({ page, sortOrder }),
-    queryKey: ["blogPage", page, sortOrder],
+    queryFn: () => blogWithPagination({ page, sortOrder, category }),
+    queryKey: ["blogPage", page, sortOrder, category],
   });
 
   return {

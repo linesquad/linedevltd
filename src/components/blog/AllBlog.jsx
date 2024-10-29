@@ -10,26 +10,30 @@ import Error from "../../ui/Error";
 const AllBlog = () => {
   const navigate = useNavigate();
   const location = useLocation();
+
   const queryParams = new URLSearchParams(location.search);
   const initialPage = parseInt(queryParams.get("page")) || 1;
   const initialSortOrder = queryParams.get("sort") || "newest";
+  const initialCategory = queryParams.get("category") || "";
+
   const [page, setPage] = useState(initialPage);
   const [sortOrder, setSortOrder] = useState(initialSortOrder);
+  const [category, setCategory] = useState(initialCategory);
+
   const { data, totalPages, isError, isLoading, error } = useBlogWithPagination(
     page,
-    sortOrder
+    sortOrder,
+    category
   );
 
   useEffect(() => {
-    if (sortOrder !== initialSortOrder) {
-      setPage(1);
-      navigate(`?page=1&sort=${sortOrder}`, { replace: true });
-    }
-  }, [sortOrder, initialSortOrder, navigate]);
+    const updatedParams = new URLSearchParams();
+    updatedParams.set("page", page);
+    updatedParams.set("sort", sortOrder);
+    updatedParams.set("category", category);
 
-  useEffect(() => {
-    navigate(`?page=${page}&sort=${sortOrder}`, { replace: true });
-  }, [page, sortOrder, navigate]);
+    navigate(`?${updatedParams.toString()}`, { replace: true });
+  }, [page, sortOrder, category, navigate]);
 
   if (isLoading) {
     return (
@@ -60,17 +64,22 @@ const AllBlog = () => {
   return (
     <Section className="flex flex-col gap-4">
       <div className="tiny:pl-0 smaller:pl-0 pl-2 sm:pl-3 md:pl-4">
-        <CategoryBlog sortOrder={sortOrder} setSortOrder={setSortOrder} />
+        <CategoryBlog
+          sortOrder={sortOrder}
+          setSortOrder={setSortOrder}
+          selectedCategory={category}
+          setCategory={setCategory}
+        />
       </div>
       <div
         className="container relative z-2 grid tiny:grid-cols-1 smaller:grid-cols-1 grid-cols-1 sm:grid-cols-2
        md:grid-cols-3 lg:grid-cols-4 gap-4 pt-1 sm:pt-2"
       >
         {data.blog.map((item) => (
-          <ul key={item.id} className="border-2 rounded-md p-2">
+          <ul key={item.id} className="border-2 rounded-md p-2 cursor-pointer">
             <li
               className="flex flex-col tiny:text-base smaller:text-lg text-xl sm:text-[22px] md:text-xl items-center tiny:gap-1
-            tiny:font-medium text-white"
+            tiny:font-medium text-white "
             >
               <img
                 src={item.image}

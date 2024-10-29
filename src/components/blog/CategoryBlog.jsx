@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Select from "react-select";
 
 const stateOptions = [
@@ -60,19 +59,22 @@ const customStyles = {
   }),
 };
 
-const CategoryBlog = ({ sortOrder, setSortOrder }) => {
-  const [selectedCategory, setSelectedCategory] = useState(categoryOptions[0]);
-
+const CategoryBlog = ({
+  sortOrder,
+  setSortOrder,
+  selectedCategory,
+  setCategory,
+}) => {
   const handleTimeChange = (selectedOption) => {
     setSortOrder(selectedOption.value);
   };
 
   const handleCategoryChange = (selectedOption) => {
-    setSelectedCategory(selectedOption);
+    setCategory(selectedOption.value);
   };
 
   return (
-    <div className="container relative flex items-center tiny:justify-between tiny:gap-2 gap-10">
+    <div className="container relative flex items-center tiny:justify-between tiny:gap-2 gap-10 ">
       <div>
         <label
           htmlFor="time-select"
@@ -86,11 +88,9 @@ const CategoryBlog = ({ sortOrder, setSortOrder }) => {
           onChange={handleTimeChange}
           options={stateOptions}
           styles={customStyles}
-          menuPortalTarget={document.getElementById("portal")}
           menuPlacement="auto"
-          menuShouldBlockScroll={false}
           classNamePrefix="select"
-          className="basic-single tiny:text-sm smaller:text-base text-lg sm:text-xl md:text-2xl"
+          className="basic-single tiny:text-sm smaller:text-base text-lg sm:text-xl md:text-2xl "
         />
       </div>
       <div>
@@ -102,16 +102,15 @@ const CategoryBlog = ({ sortOrder, setSortOrder }) => {
         </label>
         <Select
           id="category-select"
-          value={selectedCategory}
+          value={categoryOptions.find(
+            (option) => option.value === selectedCategory
+          )}
           onChange={handleCategoryChange}
           options={categoryOptions}
           styles={customStyles}
-          menuPortalTarget={document.getElementById("portal")}
           menuPlacement="auto"
-          menuShouldBlockScroll={false}
           classNamePrefix="select"
-          className="basic-single tiny:text-sm smaller:text-base text-lg sm:text-xl md:text-2xl "
-          isDisabled={true}
+          className="basic-single tiny:text-sm smaller:text-base text-lg sm:text-xl md:text-2xl"
         />
       </div>
     </div>
