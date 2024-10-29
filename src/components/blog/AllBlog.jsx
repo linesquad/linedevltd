@@ -10,13 +10,17 @@ const AllBlog = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const initialPage = parseInt(queryParams.get("page")) || 1;
+  const initialSortOrder = queryParams.get("sort") || "newest";
   const [page, setPage] = useState(initialPage);
-  const { data, totalPages, isError, isLoading, error } =
-    useBlogWithPagination(page);
+  const [sortOrder, setSortOrder] = useState(initialSortOrder);
+  const { data, totalPages, isError, isLoading, error } = useBlogWithPagination(
+    page,
+    sortOrder
+  );
 
   useEffect(() => {
-    navigate(`?page=${page}`, { replace: true });
-  }, [page, navigate]);
+    navigate(`?page=${page}&sort=${sortOrder}`, { replace: true });
+  }, [page, sortOrder, navigate]);
 
   if (isLoading) {
     return <p>Loading...</p>;
@@ -36,7 +40,7 @@ const AllBlog = () => {
   return (
     <Section className="flex flex-col gap-4">
       <div className="tiny:pl-0 smaller:pl-0 pl-2 sm:pl-3 md:pl-4">
-        <CategoryBlog />
+        <CategoryBlog sortOrder={sortOrder} setSortOrder={setSortOrder} />
       </div>
       <div
         className="container relative z-2 grid tiny:grid-cols-1 smaller:grid-cols-1 grid-cols-1 sm:grid-cols-2

@@ -2,7 +2,6 @@ import { useState } from "react";
 import Select from "react-select";
 
 const stateOptions = [
-  { value: "", label: "All Time" },
   { value: "newest", label: "Newest" },
   { value: "oldest", label: "Oldest" },
 ];
@@ -61,12 +60,11 @@ const customStyles = {
   }),
 };
 
-const CategoryBlog = () => {
-  const [selectedTime, setSelectedTime] = useState(stateOptions[0]);
+const CategoryBlog = ({ sortOrder, setSortOrder }) => {
   const [selectedCategory, setSelectedCategory] = useState(categoryOptions[0]);
 
   const handleTimeChange = (selectedOption) => {
-    setSelectedTime(selectedOption);
+    setSortOrder(selectedOption.value);
   };
 
   const handleCategoryChange = (selectedOption) => {
@@ -84,7 +82,7 @@ const CategoryBlog = () => {
         </label>
         <Select
           id="time-select"
-          value={selectedTime}
+          value={stateOptions.find((option) => option.value === sortOrder)}
           onChange={handleTimeChange}
           options={stateOptions}
           styles={customStyles}
@@ -113,6 +111,7 @@ const CategoryBlog = () => {
           menuShouldBlockScroll={false}
           classNamePrefix="select"
           className="basic-single tiny:text-sm smaller:text-base text-lg sm:text-xl md:text-2xl "
+          isDisabled={true}
         />
       </div>
     </div>
