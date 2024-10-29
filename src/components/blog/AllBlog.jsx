@@ -19,6 +19,13 @@ const AllBlog = () => {
   );
 
   useEffect(() => {
+    if (sortOrder !== initialSortOrder) {
+      setPage(1);
+      navigate(`?page=1&sort=${sortOrder}`, { replace: true });
+    }
+  }, [sortOrder, initialSortOrder, navigate]);
+
+  useEffect(() => {
     navigate(`?page=${page}&sort=${sortOrder}`, { replace: true });
   }, [page, sortOrder, navigate]);
 
