@@ -4,6 +4,8 @@ import useBlogWithPagination from "../../hooks/useBlogWithPagination";
 import Section from "../Section";
 import CategoryBlog from "./CategoryBlog";
 import Pagination from "./Pagination";
+import Loading from "../../ui/Loading";
+import Error from "../../ui/Error";
 
 const AllBlog = () => {
   const navigate = useNavigate();
@@ -30,11 +32,22 @@ const AllBlog = () => {
   }, [page, sortOrder, navigate]);
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return (
+      <div className="flex justify-center">
+        <Loading width="500px" height="auto" />;
+      </div>
+    );
   }
 
   if (isError) {
-    return <p>{error.message}</p>;
+    return (
+      <div className="flex justify-center items-center">
+        <Error width="500px" height="auto" />
+        <span className="text-red-400 font-bold tiny:text-xs smaller:text-sm text-base sm:text-lg md:text-xl">
+          {error.message}
+        </span>
+      </div>
+    );
   }
 
   if (!data || !data.blog) {
