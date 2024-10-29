@@ -1,5 +1,6 @@
 import Section from "../Section";
 import companyLogo from "../../assets/lineZ.png";
+import { ScrollParallax } from "react-just-parallax";
 
 function OurCompany() {
   return (
@@ -27,12 +28,14 @@ function OurCompany() {
           </div>
           <div className="lg:w-[400px] lg:h-[400px] w-[300px] h-[300px] mt-[20px] lg:mt-[0px] bg-gradient-to-br from-[#2a003f] via-[#1b1b3a] to-[#0a043c] rounded-[20px] relative">
             <img src={companyLogo} alt="company-logo" />
-            <div className="hidden lg:block w-[200px] p-[20px] bg-[#fff] absolute bottom-[-70px] left-[-70px] rounded-[20px]">
-              <p className="text-[#000]">
-                ,,Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Itaque, cum. Lorem ipsum dolor sit.&quot;
-              </p>
-            </div>
+            <ScrollParallax isAbsolutelyPositioned>
+              <div className="hidden lg:block w-[200px] p-[20px] bg-[#fff] absolute bottom-[-70px] left-[-70px] rounded-[20px]">
+                <p className="text-[#000]">
+                  ,,Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Itaque, cum. Lorem ipsum dolor sit.&quot;
+                </p>
+              </div>
+            </ScrollParallax>
           </div>
         </div>
       </Section>
