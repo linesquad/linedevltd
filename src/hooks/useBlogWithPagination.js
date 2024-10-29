@@ -6,7 +6,14 @@ const useBlogWithPagination = (page) => {
     queryFn: () => blogWithPagination({ page }),
     queryKey: ["blogPage", page],
   });
-  return { data, isError, error, isLoading };
+
+  return {
+    data,
+    isError,
+    error,
+    isLoading,
+    totalPages: data ? Math.ceil(data.totalCount / 4) : 0,
+  };
 };
 
 export default useBlogWithPagination;

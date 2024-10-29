@@ -5,10 +5,16 @@ export const blogWithPagination = async ({ page }) => {
   const from = (page - 1) * itemsPerPage;
   const to = from + itemsPerPage - 1;
 
-  let { data: blog, error } = await supabase
+  const { data: blog, error: blogError } = await supabase
     .from("blog")
     .select("*")
     .range(from, to);
 
-  return { blog, error };
+  const { count, error: countError } = await supabase
+    .from("blog")
+    .select("*", { count: "exact", head: true });
+
+  const error = blogError || countError;
+
+  return { blog, totalCount: count, error };
 };
