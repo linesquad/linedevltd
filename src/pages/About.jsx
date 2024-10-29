@@ -3,7 +3,7 @@ import OurCompany from "../components/aboutPage/OurCompany";
 
 const About = () => {
   return (
-    <div className="max-w-[1444px] mx-auto">
+    <div className="">
       <AboutHeader />
       <OurCompany />
     </div>
