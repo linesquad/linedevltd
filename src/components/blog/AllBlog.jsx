@@ -1,12 +1,71 @@
-import useGetAllBlogs from "../../hooks/useGetAllBlogs";
+import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import useBlogWithPagination from "../../hooks/useBlogWithPagination";
 import Section from "../Section";
+import CategoryBlog from "./CategoryBlog";
+import Pagination from "./Pagination";
 
 const AllBlog = () => {
-  const { data, isError, isLoading, error } = useGetAllBlogs();
-  console.log(data);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const initialPage = parseInt(queryParams.get("page")) || 1;
+  const [page, setPage] = useState(initialPage);
+  const { data, totalPages, isError, isLoading, error } =
+    useBlogWithPagination(page);
+
+  useEffect(() => {
+    navigate(`?page=${page}`, { replace: true });
+  }, [page, navigate]);
+
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
+  if (isError) {
+    return <p>{error.message}</p>;
+  }
+
+  if (!data || !data.blog) {
+    return <p>No Data!</p>;
+  }
+
+  const truncateText = (text, length = 20) =>
+    text.length > length ? text.slice(0, length) + "..." : text;
+
   return (
-    <Section>
-      <div className=" container relative z-2"></div>
+    <Section className="flex flex-col gap-4">
+      <div className="tiny:pl-0 smaller:pl-0 pl-2 sm:pl-3 md:pl-4">
+        <CategoryBlog />
+      </div>
+      <div
+        className="container relative z-2 grid tiny:grid-cols-1 smaller:grid-cols-1 grid-cols-1 sm:grid-cols-2
+       md:grid-cols-3 lg:grid-cols-4 gap-4 pt-1 sm:pt-2"
+      >
+        {data.blog.map((item) => (
+          <ul key={item.id} className="border-2 rounded-md p-2">
+            <li
+              className="flex flex-col tiny:text-base smaller:text-lg text-xl sm:text-[22px] md:text-xl items-center tiny:gap-1
+            tiny:font-medium text-white"
+            >
+              <img
+                src={item.image}
+                alt={item.blog_name}
+                className="tiny:max-w-52"
+              />
+              <span className="md:hidden pt-1">
+                {truncateText(item.blog_name)}
+              </span>
+              <span className="hidden md:block pt-1">
+                {truncateText(item.blog_name, 14)}
+              </span>
+              <hr className="w-full my-2 border-gray-400" />
+              <span>{truncateText(item.author, 16)}</span>
+            </li>
+          </ul>
+        ))}
+      </div>
+      <Pagination page={page} setPage={setPage} totalPages={totalPages} />
     </Section>
   );
 };
