@@ -7,8 +7,8 @@ function SingleWorker({ image, name, description }) {
         className="rounded-[20px] w-[300px] 2xl:w-[400px] object-cover"
       />
       <div className="mt-[15px] max-w-[300px] 2xl:max-w-[400px]">
-        <p className="text-[18px]">{name}</p>
-        <p className="text-[14px] text-n-1/50">{description}</p>
+        <p className="text-[18px] lg:text-[20px]">{name}</p>
+        <p className="text-[14px] lg:text-[16px] text-n-1/50">{description}</p>
       </div>
     </div>
   );

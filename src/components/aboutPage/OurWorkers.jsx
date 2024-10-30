@@ -43,13 +43,15 @@ function OurWorkers() {
     <div>
       <Section customPaddings="pt-[40px] px-[0px] md:px-[40px]">
         <div className="max-w-[1444px] mx-auto bg-gray-900 py-[50px]">
-          <h2 className="text-[18px] text-center">Lets Meet Our Antonys</h2>
+          <h2 className="text-[18px] lg:text-[24px] text-center">
+            Lets Meet Our Antonys
+          </h2>
           <div className="mt-[16px]">
-            <p className="text-[14px] text-center">
+            <p className="text-[14px] lg:text-[16px] text-center">
               Get the proper legal consultation from Legal wizard. We are here
               to
             </p>
-            <p className="text-[14px] text-center">
+            <p className="text-[14px] lg:text-[16px] text-center">
               consult you as per your business need
             </p>
           </div>
