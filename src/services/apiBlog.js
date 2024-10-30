@@ -29,3 +29,27 @@ export const blogWithPagination = async ({ page, sortOrder, category }) => {
 
   return { blog, totalCount: count, error };
 };
+
+export const getBlogById = async (id) => {
+  let { data: blog, error } = await supabase
+    .from("blog")
+    .select("*")
+    .eq("id", id)
+    .single();
+  return { blog, error };
+};
+
+export const getLatestBlogs = async (skipId = null) => {
+  const query = supabase
+    .from("blog")
+    .select("*")
+    .order("created_at", { ascending: false })
+    .limit(3);
+
+  if (skipId) {
+    query.neq("id", skipId);
+  }
+
+  const { data: blogs, error } = await query;
+  return { blogs, error };
+};

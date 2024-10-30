@@ -84,6 +84,7 @@ const AllBlog = () => {
             <li
               className="flex flex-col tiny:text-base smaller:text-lg text-xl sm:text-[22px] md:text-xl items-center tiny:gap-1
             tiny:font-medium text-white "
+              onClick={() => navigate(`/blog/${item.id}`)}
             >
               <img
                 src={item.image}
