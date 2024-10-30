@@ -5,7 +5,7 @@ import teamImage from "/team.jpg";
 function OurWorks() {
   return (
     <div>
-      <Section customPaddings="py-[40px] lg:pt-[130px] pb-[100px] px-[0px] md:px-[40px]">
+      <Section customPaddings="pt-[40px] lg:pt-[130px] px-[0px] md:px-[40px]">
         <div className="max-w-[1444px] mx-auto px-[20px]">
           <div>
             <h2 className="text-[22px] lg:text-[24px] text-center">
