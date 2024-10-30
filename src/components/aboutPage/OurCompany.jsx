@@ -26,7 +26,7 @@ function OurCompany() {
               illum.
             </p>
           </div>
-          <div className="lg:w-[400px] lg:h-[400px] w-[300px] h-[300px] mt-[20px] lg:mt-[0px] bg-gradient-to-br from-[#2a003f] via-[#1b1b3a] to-[#0a043c] rounded-[20px] relative">
+          <div className="lg:w-[400px] lg:h-[400px] w-[300px] h-[300px] mx-auto lg:mx-0 mt-[20px] lg:mt-[0px] bg-gradient-to-br from-[#2a003f] via-[#1b1b3a] to-[#0a043c] rounded-[20px] relative">
             <img src={companyLogo} alt="company-logo" />
             <ScrollParallax isAbsolutelyPositioned>
               <div className="hidden lg:block w-[200px] p-[20px] bg-[#fff] absolute bottom-[-70px] left-[-70px] rounded-[20px]">
