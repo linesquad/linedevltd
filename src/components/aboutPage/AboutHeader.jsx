@@ -15,7 +15,7 @@ function AboutHeader() {
             </div>
           </div>
         </div>
-        <div className="h-[100px] lg:rounded-b-[60px] bg-gray-900"></div>
+        <div className="h-[100px] lg:rounded-b-[60px] bg-gray-900 max-w-[1444px] mx-auto"></div>
       </Section>
     </div>
   );

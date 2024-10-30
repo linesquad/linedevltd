@@ -5,8 +5,8 @@ import { ScrollParallax } from "react-just-parallax";
 function OurCompany() {
   return (
     <div>
-      <Section customPaddings="py-[40px] pb-[100px] px-[0px] md:px-[40px]">
-        <div className="px-[20px] w-full flex flex-col lg:flex-row lg:items-center lg:justify-between max-w-[1444px] mx-auto">
+      <Section customPaddings="py-[40px] px-[0px] md:px-[40px]">
+        <div className="px-[20px] w-full flex flex-col lg:flex-row lg:items-center lg:gap-[50px] lg:justify-between lg:px-[60px] max-w-[1444px] mx-auto">
           <div className="lg:max-w-[400px] xl:max-w-[650px]">
             <h2 className="text-[18px] lg:text-[24px]">
               We help on creating Legal briefs
