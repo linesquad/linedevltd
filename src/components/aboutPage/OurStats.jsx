@@ -1,4 +1,5 @@
 import SingleStat from "./SingleStat";
+// update to make dinamic
 
 function OurStats() {
   return (

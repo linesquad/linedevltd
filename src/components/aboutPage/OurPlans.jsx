@@ -2,6 +2,8 @@ import Section from "../Section";
 import SinglePlan from "./SinglePlan";
 import { FaDesktop } from "react-icons/fa";
 
+// need to be dinamic
+
 function OurPlans() {
   return (
     <div>
