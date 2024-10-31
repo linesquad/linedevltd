@@ -10,6 +10,7 @@ import Connect from "./pages/Connect";
 import PageNotFound from "./pages/PageNotFound";
 import CourseDetail from "./components/Courses/CourseDetail";
 import SinglePagePricing from "./components/Pricing/SinglePagePricing";
+import SingleBlog from "./components/blog/SingleBlog";
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
 
           <Route path="portfolio" element={<Portfolio />} />
           <Route path="blog" element={<Blog />} />
+          <Route path="blog/:id" element={<SingleBlog />} />
 
           <Route path="getCourse" element={<GetCourse />} />
           <Route path="getCourse/:courseTitle" element={<CourseDetail />} />
