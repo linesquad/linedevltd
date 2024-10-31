@@ -3,7 +3,7 @@ import lanobg from "../assets/portfolio/lano.png";
 import jujuna from "../assets/portfolio/jujuna.png";
 import bg from "../assets/portfolio/bg.png";
 import Section from "../components/Section";
-
+// need update to become dynamic
 const Portfolio = () => {
   const lanoIcons = [
     {
