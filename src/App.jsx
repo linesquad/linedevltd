@@ -10,6 +10,7 @@ import Connect from "./pages/Connect";
 import PageNotFound from "./pages/PageNotFound";
 import CourseDetail from "./components/Courses/CourseDetail";
 import SinglePagePricing from "./components/Pricing/SinglePagePricing";
+import AdminLayout from "./ui/AdminLayout";
 
 const App = () => {
   return (
@@ -18,22 +19,20 @@ const App = () => {
         <Route element={<AppLayout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
-
           <Route path="pricing" element={<Pricing />} />
           <Route
             path="pricing/:servicesPricing"
             element={<SinglePagePricing />}
           />
-
           <Route path="portfolio" element={<Portfolio />} />
           <Route path="blog" element={<Blog />} />
-
           <Route path="getCourse" element={<GetCourse />} />
           <Route path="getCourse/:courseTitle" element={<CourseDetail />} />
-
           <Route path="connect" element={<Connect />} />
         </Route>
-
+        <Route path="admin" element={<AdminLayout />}>
+        
+        </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </>
