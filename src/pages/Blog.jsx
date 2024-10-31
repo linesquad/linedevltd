@@ -1,5 +1,7 @@
+import AllBlog from "../components/blog/allBlog";
+
 const Blog = () => {
-  return <div>Blog</div>;
+  return <AllBlog />;
 };
 
 export default Blog;
