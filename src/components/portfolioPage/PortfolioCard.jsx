@@ -10,6 +10,7 @@ const PortfolioCard = ({
   image,
   title,
   desc,
+  link,
   icons,
 }) => {
   return (
@@ -17,7 +18,7 @@ const PortfolioCard = ({
       <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10">
         <div className="sm:h-[41rem] h-[32rem] lg:min-h-[32.5rem] flex items-center justify-center sm:w-[570px] w-[80vw] z-1">
           <PinContainer title={pinTitle} href={pinLink}>
-            <Link to={"https://lano.vercel.app/"} target="_blank">
+            <Link to={link} target="_blank">
               <div className="relative flex items-center justify-center sm:w-[570px] w-[80vw] overflow-hidden sm:h-[40vh] h-[30vh] mb-10 ">
                 <div className="relative w-full h-full overflow-hidden lg:rounded-3xl bg-[#4d218e75]">
                   <img src={cover} alt="bg-img" width={500} height={500} />

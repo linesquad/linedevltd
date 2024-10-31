@@ -33,6 +33,7 @@ const Portfolio = () => {
              from food and toys to grooming essentials, designed to meet all pet care needs.`}
           pinLink={"https://lano.vercel.app/"}
           pinTitle={"https://lano.vercel.app/"}
+          link={"https://lano.vercel.app/"}
           image={lanobg}
           title={`Lano - pet shop`}
           icons={lanoIcons}
@@ -43,6 +44,7 @@ const Portfolio = () => {
              სასმელების მრავალფეროვან არჩევანს ადგილობრივი და უცხოური ბრენდებით.`}
           pinLink={"https://jujuna-v001.vercel.app/"}
           pinTitle={"https://jujuna-v001.vercel.app/"}
+          link={"https://jujuna-v001.vercel.app/"}
           image={jujuna}
           title={`ჟუჟუნა`}
           icons={lanoIcons}
