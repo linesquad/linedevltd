@@ -1,4 +1,4 @@
-import AllBlog from "../components/blog/allBlog";
+import AllBlog from "../components/blog/AllBlog";
 
 const Blog = () => {
   return <AllBlog />;
