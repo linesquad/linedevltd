@@ -11,6 +11,7 @@ import PageNotFound from "./pages/PageNotFound";
 import CourseDetail from "./components/Courses/CourseDetail";
 import SinglePagePricing from "./components/Pricing/SinglePagePricing";
 import SingleBlog from "./components/blog/SingleBlog";
+import AdminLayout from "./ui/AdminLayout";
 
 const App = () => {
   return (
@@ -35,7 +36,7 @@ const App = () => {
 
           <Route path="connect" element={<Connect />} />
         </Route>
-
+        <Route path="admin" element={<AdminLayout />}></Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </>
