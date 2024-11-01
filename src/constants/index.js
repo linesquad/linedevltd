@@ -632,7 +632,43 @@ export const benefits = [
     iconUrl: benefitIcon2,
     imageUrl: roadmap1,
     light: true,
+    syllabus: {
+      Basics: {
+        week1: {
+          lecture1: {
+            title: "introduction",
+            description: [],
+          },
+          lecture2: {
+            title: "Types",
+            description: [],
+          },
+          lecture3: {
+            title: "Types",
+            description: [],
+          },
+        },
+        week2: {
+          lecture4: {
+            title: "Coercion",
+            description: [],
+          },
+          lecture5: {
+            title: "Philosophy of Coercion",
+            description: [],
+          },
+          lecture6: {
+            title: "Equality",
+            description: [],
+          },
+        },
+      },
+      Intermediate: {},
+      Advanced: {},
+      Internship: {},
+    },
   },
+
   {
     id: "2",
     title: "TypeScript",
