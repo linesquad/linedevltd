@@ -1,7 +1,7 @@
 import AboutHeader from "../components/aboutPage/AboutHeader";
+import DisplayWorkers from "../components/aboutPage/DisplayWorkers";
 import OurCompany from "../components/aboutPage/OurCompany";
 import OurPlans from "../components/aboutPage/OurPlans";
-import OurWorkers from "../components/aboutPage/OurWorkers";
 import OurWorks from "../components/aboutPage/OurWorks";
 
 const About = () => {
@@ -10,7 +10,7 @@ const About = () => {
       <AboutHeader />
       <OurCompany />
       <OurWorks />
-      <OurWorkers />
+      <DisplayWorkers />
       <OurPlans />
     </div>
   );
