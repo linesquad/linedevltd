@@ -41,6 +41,7 @@ import card3 from "../assets/benefits/card-3.svg";
 import card4 from "../assets/benefits/card-4.svg";
 import card5 from "../assets/benefits/card-5.svg";
 import card6 from "../assets/benefits/card-6.svg";
+import { FaDesktop } from "react-icons/fa";
 
 export const navigation = [
   {
@@ -734,5 +735,26 @@ export const socials = [
     title: "Facebook",
     iconUrl: facebook,
     url: "#",
+  },
+];
+
+export const plans = [
+  {
+    icon: FaDesktop,
+    title: "Write Legal Pleadings",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab reprehenderitrepellendus praesentium. Excepturi repellendus repudiandae commodi nequeenim earum provident, labore odio quis porro cum debitis amet sitcorporis! Doloribus?",
+  },
+  {
+    icon: FaDesktop,
+    title: "Write Legal Pleadings",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab reprehenderitrepellendus praesentium. Excepturi repellendus repudiandae commodi nequeenim earum provident, labore odio quis porro cum debitis amet sitcorporis! Doloribus?",
+  },
+  {
+    icon: FaDesktop,
+    title: "Write Legal Pleadings",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab reprehenderitrepellendus praesentium. Excepturi repellendus repudiandae commodi nequeenim earum provident, labore odio quis porro cum debitis amet sitcorporis! Doloribus?",
   },
 ];
