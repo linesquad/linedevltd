@@ -634,39 +634,226 @@ export const benefits = [
     imageUrl: roadmap1,
     light: true,
     syllabus: {
-      Basics: {
-        week1: {
+      Javascript: {
+        Basics: {
           lecture1: {
-            title: "introduction",
-            description: [],
+            title: "Introduction",
+            description: [
+              "Overview of JavaScript, its uses, and key features.",
+              "Understanding JavaScript’s role in web development.",
+            ],
           },
           lecture2: {
             title: "Types",
-            description: [],
+            description: [
+              "Exploring JavaScript's core data types and their usage.",
+              "Understanding type behavior and type checking methods.",
+            ],
           },
           lecture3: {
-            title: "Types",
-            description: [],
+            title: "Coercion",
+            description: [
+              "Deep dive into JavaScript's type coercion mechanisms.",
+              "Handling implicit and explicit type conversions effectively.",
+            ],
           },
         },
-        week2: {
+        Intermediate: {
           lecture4: {
             title: "Coercion",
-            description: [],
+            description: [
+              "Philosophy and impact of type coercion on code reliability.",
+              "Handling type conversions for optimized performance.",
+            ],
           },
           lecture5: {
-            title: "Philosophy of Coercion",
-            description: [],
+            title: "Equality",
+            description: [
+              "Understanding strict vs. loose equality operators in JavaScript.",
+              "Best practices for type-safe comparisons.",
+            ],
           },
           lecture6: {
-            title: "Equality",
-            description: [],
+            title: "Static Typing",
+            description: [
+              "Benefits of adding static typing in JavaScript.",
+              "Using tools like TypeScript for type safety.",
+            ],
+          },
+          lecture7: {
+            title: "Scope",
+            description: [
+              "In-depth understanding of scope in JavaScript.",
+              "Scope management with functions and block scopes.",
+            ],
+          },
+        },
+        Advanced: {
+          lecture8: {
+            title: "Advanced Scope",
+            description: [
+              "Exploring nested scope and lexical environment.",
+              "Scope rules and closures in JavaScript functions.",
+            ],
+          },
+          lecture9: {
+            title: "Closure",
+            description: [
+              "Understanding closures and their practical uses.",
+              "Leveraging closures for private data and functions.",
+            ],
+          },
+          lecture10: {
+            title: "Objects",
+            description: [
+              "Advanced object creation and manipulation techniques.",
+              "JavaScript's approach to object-oriented programming.",
+            ],
+          },
+          lecture11: {
+            title: "Prototypes",
+            description: [
+              "Exploring JavaScript’s prototype-based inheritance.",
+              "Manipulating and understanding prototype chains.",
+            ],
+          },
+          lecture12: {
+            title: "Functions - Callbacks",
+            description: [
+              "Understanding callback functions and async flow.",
+              "Effective use of callbacks in JavaScript programming.",
+            ],
+          },
+        },
+        Internship: {
+          lecture13: {
+            title: "Async JS",
+            description: [
+              "JavaScript’s asynchronous nature and event loop.",
+              "Working with asynchronous functions and promises.",
+            ],
+          },
+          lecture14: {
+            title: "Promises",
+            description: [
+              "In-depth knowledge of promise syntax and chaining.",
+              "Error handling in async operations with promises.",
+            ],
+          },
+          lecture15: {
+            title: "Classes & Prototypes",
+            description: [
+              "Exploring class syntax and prototype relationships.",
+              "Using classes and prototypes for object structuring.",
+            ],
+          },
+          lecture16: {
+            title: "Object Creation",
+            description: [
+              "Various methods for creating and managing objects.",
+              "Object literal, constructors, and factory functions.",
+            ],
+          },
+          lecture17: {
+            title: "Prototype & New",
+            description: [
+              "Understanding new operator and prototype inheritance.",
+              "Creating new instances and their prototype chains.",
+            ],
+          },
+          lecture18: {
+            title: "Scope & This",
+            description: [
+              "Rules for the 'this' keyword in different contexts.",
+              "Managing scope and context with functions and methods.",
+            ],
+          },
+          lecture19: {
+            title: "Default Prototype Chain",
+            description: [
+              "Examining the default prototype chain in JavaScript.",
+              "Customizing prototype chains for specialized objects.",
+            ],
+          },
+          lecture20: {
+            title: "Subclassing with Factory Functions",
+            description: [
+              "Creating subclasses and extending functionality.",
+              "Advanced inheritance with factory functions.",
+            ],
+          },
+          lecture21: {
+            title: "Subclassing with New & Call",
+            description: [
+              "Subclassing using new and call for inheritance.",
+              "Understanding call method and its inheritance impact.",
+            ],
+          },
+          lecture22: {
+            title: "Subclassing with Class, Extends & Super",
+            description: [
+              "Using class inheritance with extends and super keywords.",
+              "Leveraging modern class syntax for cleaner code.",
+            ],
+          },
+          lecture23: {
+            title: "Higher Order Functions",
+            description: [
+              "Creating and using higher-order functions in JavaScript.",
+              "Using functional programming concepts for code efficiency.",
+            ],
+          },
+          lecture24: {
+            title: "Map & Reduce",
+            description: [
+              "Effective use of map and reduce for data transformations.",
+              "Writing functional code for array processing.",
+            ],
+          },
+          lecture25: {
+            title: "Composition",
+            description: [
+              "Composing functions for modular and readable code.",
+              "Using function composition for better code structure.",
+            ],
+          },
+          lecture26: {
+            title: "Closure",
+            description: [
+              "Applying closures for data encapsulation and privacy.",
+              "Advanced closure techniques in functional programming.",
+            ],
+          },
+          lecture27: {
+            title: "Function Decoration & Partial Application",
+            description: [
+              "Advanced techniques for enhancing function behavior.",
+              "Using partial application for flexible function calls.",
+            ],
+          },
+          lecture28: {
+            title: "Benchmarking & Performance Monitoring",
+            description: [
+              "Tools and techniques for JavaScript performance analysis.",
+              "Optimizing code using performance monitoring insights.",
+            ],
+          },
+          lecture29: {
+            title: "Garbage Collection & Async Code",
+            description: [
+              "Understanding JavaScript garbage collection process.",
+              "Optimizing async code to reduce memory leaks.",
+            ],
+          },
+          lecture30: {
+            title: "Update & Memory Optimizations",
+            description: [
+              "Strategies for memory management in JavaScript.",
+              "Using memory optimizations to enhance app performance.",
+            ],
           },
         },
       },
-      Intermediate: {},
-      Advanced: {},
-      Internship: {},
     },
   },
 
