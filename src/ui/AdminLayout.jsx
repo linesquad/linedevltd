@@ -1,32 +1,40 @@
 import { useState, useEffect } from "react";
 import AdminForm from "../components/admin/AdminForm";
 import { Outlet } from "react-router-dom";
+import supabase from "../services/supabase";
+import AdminNav from "../components/admin/AdminNav";
+
 const AdminLayout = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    const storedCredentials = sessionStorage.getItem("adminCredentials");
-    if (storedCredentials) {
-      const { username, password } = JSON.parse(storedCredentials);
+    const checkSession = async () => {
+      const {
+        data: { session },
+      } = await supabase.auth.getSession();
+      setIsLoggedIn(!!session);
+    };
 
-      const adminUsername = import.meta.env.VITE_ADMIN_LOGIN;
-      const adminPassword = import.meta.env.VITE_ADMIN_PASSWORD;
+    checkSession();
 
-      if (username === adminUsername && password === adminPassword) {
-        setIsLoggedIn(true);
+    const { data: authListener } = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        setIsLoggedIn(!!session);
       }
-    }
+    );
+
+    return () => {
+      authListener.subscription.unsubscribe();
+    };
   }, []);
 
-  const handleLogin = () => {
-    setIsLoggedIn(true);
-  };
+  const handleLogin = () => setIsLoggedIn(true);
 
   return (
     <section className="bg-primary-bg">
       {isLoggedIn ? (
         <div>
-          <h1>Hello im Admin Panel yeee</h1>
+          <AdminNav />
           <Outlet />
         </div>
       ) : (

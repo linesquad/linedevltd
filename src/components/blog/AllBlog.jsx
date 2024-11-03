@@ -62,8 +62,8 @@ const AllBlog = () => {
     return <p>No Data!</p>;
   }
 
-  const truncateText = (text, length = 20) =>
-    text.length > length ? text.slice(0, length) + "..." : text;
+  // const truncateText = (text, length = 20) =>
+  //   text.length > length ? text.slice(0, length) + "..." : text;
 
   return (
     <Section className="flex flex-col gap-4">
@@ -92,13 +92,15 @@ const AllBlog = () => {
                 className="tiny:max-w-52"
               />
               <span className="md:hidden pt-1">
-                {truncateText(item.blog_name)}
+                {/* {truncateText(item.blog_name)} */}
+                {item.blog_name}
               </span>
-              <span className="hidden md:block pt-1">
+              {/* <span className="hidden md:block pt-1">
                 {truncateText(item.blog_name, 14)}
-              </span>
+              </span> */}
               <hr className="w-full my-2 border-gray-400" />
-              <span>{truncateText(item.author, 16)}</span>
+              {/* <span>{truncateText(item.author, 16)}</span> */}
+              <span>{item.author}</span>
             </li>
           </ul>
         ))}

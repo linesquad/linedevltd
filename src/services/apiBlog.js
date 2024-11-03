@@ -53,3 +53,27 @@ export const getLatestBlogs = async (skipId = null) => {
   const { data: blogs, error } = await query;
   return { blogs, error };
 };
+
+export const getAllBlogs = async () => {
+  let { data: blog, error } = await supabase.from("blog").select("*");
+  return { blog, error };
+};
+
+export const putAllBlogs = async (blogData) => {
+  let { data: blog, error } = await supabase.from("blog").insert([blogData]);
+  if (error) {
+    throw new Error("Error inserting data:", error);
+  }
+  return { blog, error };
+};
+
+export const deleteBlog = async (id) => {
+  const { data, error } = await supabase.from("blog").delete().eq("id", id); 
+
+  if (error) {
+    console.error("Error deleting blog:", error);
+    throw error; 
+  }
+
+  return data;
+};
