@@ -11,6 +11,9 @@ import PageNotFound from "./pages/PageNotFound";
 import CourseDetail from "./components/Courses/CourseDetail";
 import SinglePagePricing from "./components/Pricing/SinglePagePricing";
 import SingleBlog from "./components/blog/SingleBlog";
+import AdminLayout from "./ui/AdminLayout";
+import Blogs from "./components/admin/Blogs";
+import DeleteBlogs from "./components/admin/DeleteBlogs";
 
 const App = () => {
   return (
@@ -35,7 +38,11 @@ const App = () => {
 
           <Route path="connect" element={<Connect />} />
         </Route>
-
+        <Route path="admin" element={<AdminLayout />}>
+          <Route index element={<Blogs />} />
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="delete-blogs" element={<DeleteBlogs />} />
+        </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </>
