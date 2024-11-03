@@ -3,6 +3,7 @@ import useGetAllBlog from "../../hooks/useGetAllBlog";
 import { toast } from "react-toastify";
 import useDeleteBlog from "../../hooks/useDeleteBlog";
 import supabase from "../../services/supabase";
+import Loading from "../../ui/Loading";
 
 const DeleteBlogs = () => {
   const { data, isLoading, error } = useGetAllBlog();
@@ -27,8 +28,16 @@ const DeleteBlogs = () => {
     }
   };
 
-  if (isLoading) return <h1 className="text-center text-xl">Loading ...</h1>;
-  if (error) return <h1 className="text-center text-xl">Error...</h1>;
+  if (isLoading)
+    return (
+      <div className="flex justify-center">
+        <Loading width={500} height={500} />
+      </div>
+    );
+  if (error)
+    return (
+      <h1 className="text-center text-red-500 text-xl">{error.message}</h1>
+    );
 
   return (
     <div className="container mx-auto py-6 px-4">
@@ -53,7 +62,7 @@ const DeleteBlogs = () => {
                 </h2>
                 <h3 className="text-sm text-gray-600">{item.author}</h3>
                 <h4 className="text-sm text-purple-500">{item.category}</h4>
-                <p className="text-gray-700 mt-1">{item.description}</p>
+                <p className="text-gray-700 mt-1 pr-3">{item.description}</p>
               </div>
             </div>
             <button

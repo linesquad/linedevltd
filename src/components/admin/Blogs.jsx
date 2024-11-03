@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { v4 as uuidv4 } from "uuid";
 import supabase from "../../services/supabase";
 import usePutBlog from "../../hooks/usePostAllBlog";
-
+import { toast } from "react-toastify";
 const Blogs = () => {
   const {
     register,
@@ -12,7 +12,7 @@ const Blogs = () => {
     formState: { errors },
   } = useForm();
 
-  const { mutate } = usePutBlog();
+  const { mutate, erorr } = usePutBlog();
 
   const onSubmit = async (data) => {
     let imageUrl = null;
@@ -27,13 +27,18 @@ const Blogs = () => {
       return;
     }
     imageUrl = uploadData.path;
-    mutate({
-      image: `https://pgempqnaniewpqwylrhh.supabase.co/storage/v1/object/public/images/${imageUrl}`,
-      author: data.author,
-      blog_name: data.blogName,
-      description: data.description,
-      category: data.category,
-    });
+    if (erorr) {
+      toast.error("Failed to add the blog.");
+    } else {
+      mutate({
+        image: `https://pgempqnaniewpqwylrhh.supabase.co/storage/v1/object/public/images/${imageUrl}`,
+        author: data.author,
+        blog_name: data.blogName,
+        description: data.description,
+        category: data.category,
+      });
+      toast.success("Blog added successfully.");
+    }
 
     reset({
       image: null,
@@ -51,7 +56,7 @@ const Blogs = () => {
       </h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="bg-purple-50 shadow-lg p-8 rounded-lg w-full max-w-md flex flex-col text-red-500 gap-6"
+        className="bg-purple-50 shadow-lg p-8 rounded-lg w-full max-w-md flex flex-col text-black gap-6"
       >
         <div>
           <label className="block text-purple-700 font-medium mb-2">
@@ -118,7 +123,7 @@ const Blogs = () => {
             className="w-full border border-purple-300 rounded-lg p-2.5 bg-white placeholder-purple-400 focus:ring-2 focus:ring-purple-500"
           >
             <option value="news">News</option>
-            <option value="tutorial">Tutorial</option>
+            <option value="tutorial">Courses</option>
           </select>
           {errors.category && (
             <p className="text-red-500">{errors.category.message}</p>
